@@ -2,13 +2,16 @@
 %
 \documentclass[]{beamer}
 
+\makeatletter
+\def\input@path{{usyd-beamer-theme/}}
+\makeatother
+
 \usepackage[orientation=portrait,size=a1,scale=1.5,debug]{beamerposter}
 \usepackage{subcaption}
-%\usepackage[demo]{graphicx}
 
-\mode<presentation>{\usetheme{usyd}}
+\mode<presentation>{\usetheme{usyd-poster}}
 
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{usyd-beamer-theme}}
 
 \title{The Detection and Characterisation of \\\ \vspace{0.4em}\\ Molecular Crystals}
 \author{Malcolm Ramsay and Peter Harrowell}
