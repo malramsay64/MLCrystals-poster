@@ -1,0 +1,13 @@
+name: crystals-poster
+dependencies:
+  - python==3.6
+  - pip
+  - wheel
+  - setuptools
+  - pandoc
+  - conda-forge::tectonic==0.1.10
+  - malramsay::biber==2.11
+  - pip:
+      - pandoc-eqnos
+      - pandoc-fignos
+      - pandoc-tablenos
