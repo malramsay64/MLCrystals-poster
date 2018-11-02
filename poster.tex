@@ -6,7 +6,7 @@
 \def\input@path{{usyd-beamer-theme/}}
 \makeatother
 
-\usepackage[orientation=portrait,size=a1,scale=1.5,debug]{beamerposter}
+\usepackage[orientation=portrait,size=a0,scale=1.5,debug]{beamerposter}
 \usepackage[utf8]{inputenc}
 \usepackage[australian]{babel}
 \usepackage{amsmath}
@@ -16,7 +16,7 @@
 \usepackage{biblatex}
 \addbibresource{references.bib}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-\renewcommand*{\bibfont}{\small}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \mode<presentation>{\usetheme{usyd-poster}}
 
@@ -26,16 +26,16 @@
   \end{beamercolorbox}
 
   \leavevmode%
-  \begin{beamercolorbox}[ht=7ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+  \begin{beamercolorbox}[ht=10ex,leftskip=1em,rightskip=1em]{author in head/foot}%
     \hfill
-    \small\texttt{mram5995@uni.sydney.edu.au}\hspace{2em}
+    \normalsize\texttt{mram5995@uni.sydney.edu.au}\hspace{2em}
     \vskip1ex
   \end{beamercolorbox}
   \vskip0pt%
 }
 
 
-\graphicspath{{figures/}{usyd-beamer-theme}}
+\graphicspath{{figures/}{usyd-beamer-theme/}}
 
 \title{The Detection and Characterisation of \\\vspace{0.3em} Molecular Crystals}
 \author{Malcolm Ramsay and Peter Harrowell}
@@ -104,8 +104,8 @@
       \end{figure}
 
       Machine learning algorithms from the scikit-learn~\autocite{scikit-learn} library
-      were used for the classification.
-      The K-nearest neighbours algorithm gave the best results for this work.
+      were used for the classification. The K-nearest neighbours algorithm was the most
+      suitable for this work, being both highly accuracy and fast to run.
 
     \end{block}
 
@@ -146,19 +146,25 @@
           \label{fig:categorised}
         \end{figure}
 
-        Note that most of the single molecules classified as crystalline in the liquid
-        have a local environment that matches one of the crystals.
+        The most notable feature of these crystal structures is that the p2gg structure
+        has undergone a solid-state phase transition to the p2 structure, with the p2gg
+        structure at the grain boundary of the two orientations. This algorithm is able
+        to identify this transition taking place, correctly classifying each polymorph.
 
       \end{block}
 
       \begin{block}{Future Work}
-        This work could easily be extend to a wide range of crystal structures
-        using the relative orientations, a scaled distance, and angle to neighbours.
-        This extension requires finding the crystal structures of a number of 3D molecules
-        to generate the training data.\\
 
-        Further work would incorporate this functionality into a simple to use open source library
-        so that this can become a standard analysis tool for many types of crystals.
+        This work could be extend to a wide range of crystal structures using the
+        relative orientations, a scaled distance, and angle to neighbours. The extension
+        of this technique requires configurations containing the liquid and the crystal
+        structures of a set of molecules which can be used to train the model.
+
+        Further work would also incorporate the machine learning functionality into a
+        domain specific, simple to use open source library, enabling this analysis
+        to become a standard tool.
+
+        \vspace{0.62em}
 
       \end{block}
 
